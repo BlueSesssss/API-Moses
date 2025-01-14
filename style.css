@@ -147,9 +147,8 @@ img {
     cursor: pointer;
 }
 
-/* Dark Mode Styles */
 body.dark-mode h1 {
-    color: #ecf0f1; /* Light color for the title in dark mode */
+    color: #ecf0f1; 
 }
 
 body.dark-mode {
