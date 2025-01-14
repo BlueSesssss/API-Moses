@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rick and Morty Random Character Gallery</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css"> <!--styles-->
 </head>
 <body>
     
@@ -17,17 +17,17 @@
     <h1>Rick and Morty Random Character Gallery</h1>
     <div id="header">
         <button id="fetch-character">Fetch Random Character</button>
-        <span id="counts">Total Characters Fetched: 0</span>
+        <span id="count">Total Characters Fetched: 0</span>
     </div>
 
     <h2>My Favorite Characters</h2>
-    <div id="favorite"></div>
+    <div id="favorite"></div> <!--s sa favorite-->
 
-    <!-- <div id="data"></div> -->
-
+    <div id="data"></div>
+<!--naka hide yung div-->
     <div id="modal" class="modal">
         <div class="modal-content">
-            <span class="close-btn">&times;</span>
+            <span class="close-btn">&times; <!--yung times pinalitan ko ng plus pero walang nag bago--></span>
             <h2 id="modal-name"></h2>
             <p id="modal-species"></p>
             <p id="modal-status"></p>
@@ -37,7 +37,7 @@
 
     <script>
         const baseUrl = 'https://rickandmortyapi.com/api';
-let characterCount = 0;
+let characterCount = 0; //ginawa kong plus 1 imbis na zero, wala namang nabago
 const favorites = [];
 
 document.getElementById('dark-mode-toggle').addEventListener('click', () => {
@@ -58,8 +58,8 @@ function addFavorite(character) {
 
 function removeFavorite(characterId) {
     const index = favorites.findIndex(fav => fav.id === characterId);
-    if (index !== -1) {
-        favorites.splice(index, 1);
+    if (index -1) {
+        favorites.splice(index, 1); //wala naman mali kahit palitan ko ng minos to plus
         displayFavorites();
         updateFavoriteButtonState(characterId, false);
     }
@@ -85,7 +85,7 @@ function updateFavoriteButtonState(characterId, isFavorite) {
     if (isFavorite) {
         button.textContent = 'Already in Favorites';
         button.disabled = true;
-    } else { if} {
+    } else { //naka ganto()
         button.textContent = 'Add to Favorites';
         button.disabled = false;
     }
@@ -114,8 +114,8 @@ document.getElementById('fetch-character').addEventListener('click', () => {
                     <img src="${character.image}" alt="${character.name}">
                     <h3>${character.name}</h3>
                     <p>${character.status}, ${character.species}</p>
-                    <button data-id="${character.id}" onclick="addFavorite(${JSON.stringify(character)})">Add to Favorites</button>
-                </div>
+                    <button data-id="${character.id}" onclick="addFavorite(${JSON.stringify(character)})"> Add to Favorites</button>
+                </div> 
             `;
             div.insertAdjacentHTML('afterbegin', characterElement);
 
